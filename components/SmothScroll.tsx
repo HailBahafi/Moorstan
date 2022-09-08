@@ -27,10 +27,6 @@ interface SmoothScrollProps {
 const SmoothScroll: FC<SmoothScrollProps> = (props: SmoothScrollProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const [h, setH] = useState(0);
-
-  let intro = false;
-
   const [pageHeight, setPageHeight] = useState(0);
 
   const { scrollY } = useScroll();
@@ -54,6 +50,7 @@ const SmoothScroll: FC<SmoothScrollProps> = (props: SmoothScrollProps) => {
     const resizeObserver = new ResizeObserver((entries) =>
       resizePageHeight(entries)
     );
+    window.scrollTo(0, 0);
     if (scrollRef) resizeObserver.observe(scrollRef.current as Element);
     return () => resizeObserver.disconnect();
   }, [scrollRef, resizePageHeight]);
