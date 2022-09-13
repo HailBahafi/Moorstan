@@ -127,41 +127,43 @@ function Bill() {
           className={"w-full"}
           // height={"%"}
         >
-          <div className="w-full  text-black font-main z-30 p-4 flex flex-col justify-center items-center">
-            <div className="flex flex-row-reverse  gap-8 flex-wrap items-center justify-center mt-4">
-              <Price
-                label="تكلفة العلاج"
-                price1={2000}
-                price2={3000}
-                className="text-2xl"
-              ></Price>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="text-lg">مقارنة الاسعار</p>
-                <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
-                  <Price label="تركيا" price1={2000}></Price>
-                  <Price label="مصر" price1={2000}></Price>
-                  <Price label="امريكا" price1={2000}></Price>
-                  <Price label="المانيا" price1={2000}></Price>
+          <body>
+            <div className="w-full  text-black font-main z-30 p-4 flex flex-col justify-center items-center">
+              <div className="flex flex-row-reverse  gap-8 flex-wrap items-center justify-center mt-4">
+                <Price
+                  label="تكلفة العلاج"
+                  price1={2000}
+                  price2={3000}
+                  className="text-2xl"
+                ></Price>
+                <div className="flex flex-col justify-center items-center ">
+                  <p className="text-lg">مقارنة الاسعار</p>
+                  <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
+                    <Price label="تركيا" price1={2000}></Price>
+                    <Price label="مصر" price1={2000}></Price>
+                    <Price label="امريكا" price1={2000}></Price>
+                    <Price label="المانيا" price1={2000}></Price>
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col justify-center items-center ">
-                <p className="text-lg">المدة</p>
-                <div className="flex flex-row flex-wrap gap-6 justify-center mt-2">
-                  <Info label=" في المستشفى" info={"5 ايام"}></Info>
-                  <Info label="في الهند" info={"5 ايام"}></Info>
+                <div className="flex flex-col justify-center items-center ">
+                  <p className="text-lg">المدة</p>
+                  <div className="flex flex-row flex-wrap gap-6 justify-center mt-2">
+                    <Info label=" في المستشفى" info={"5 ايام"}></Info>
+                    <Info label="في الهند" info={"5 ايام"}></Info>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col justify-center items-center ">
-                <p className="text-lg">التكاليف اليومية</p>
-                <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
-                  <Price label="الاكل والشرب" price1={4}></Price>
-                  <Price label="السكن" price1={15} price2={20}></Price>
-                  <Price label="المواصلات" price1={5}></Price>
+                <div className="flex flex-col justify-center items-center ">
+                  <p className="text-lg">التكاليف اليومية</p>
+                  <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
+                    <Price label="الاكل والشرب" price1={4}></Price>
+                    <Price label="السكن" price1={15} price2={20}></Price>
+                    <Price label="المواصلات" price1={5}></Price>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </body>
         </motion.foreignObject>
       </motion.svg>
     </div>
