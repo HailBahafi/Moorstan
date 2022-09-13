@@ -13,6 +13,7 @@ import Divisions from "../components/Divisions";
 
 import Service from "../components/Service";
 import Background from "../components/Background";
+import Calculator from "../components/Calculator";
 const Home: NextPage = () => {
   return (
     <SmoothScroll>
@@ -36,7 +37,8 @@ const Home: NextPage = () => {
         </div>
       </div>
       <Divisions></Divisions>
-      <div className="h-[120vh] w-full bg-none"></div>
+      <Calculator></Calculator>
+      <div className="h-screen"></div>
     </SmoothScroll>
   );
 };

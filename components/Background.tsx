@@ -19,9 +19,6 @@ export default function Background() {
 
     bgs.forEach((bg) => {
       gsap.to(bg as HTMLDivElement, {
-        // defaults: { duration: 1 },
-        // width: () => "100vw",
-        // height: () => "100vh",
         borderRadius: "0px",
         ease: "expo.out",
         duration: 0.4,

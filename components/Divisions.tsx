@@ -59,7 +59,7 @@ export default function Divisions() {
 
   const flip = () => {
     console.log("flipping");
-    let state = Flip.getState([ref.current]);
+    let state = Flip.getState([ref.current], { props: "border-radius" });
     if (ref.current) {
       ref.current.classList.remove("w-1/2");
       ref.current.classList.remove("h-2/3");
@@ -69,9 +69,9 @@ export default function Divisions() {
       ref.current.classList.add("rounded-[20px]");
     }
     Flip.from(state, {
-      delay: 0.1,
-      duration: 0.7,
-      ease: "expo.out",
+      // delay: 0.2,
+      duration: 0.5,
+      ease: "expo.inOut",
       onComplete: afterFlip,
     });
   };
@@ -110,12 +110,12 @@ export default function Divisions() {
 
     Flip.from(state, {
       targets: "#sections",
-      duration: 0.5,
+      duration: 0.1,
       ease: "expo.out",
     });
     Flip.from(state, {
       targets: "#section",
-      duration: 0.5,
+      duration: 0.1,
       ease: "expo.out",
     });
   };
@@ -140,7 +140,7 @@ export default function Divisions() {
       <div
         ref={ref}
         id="elm"
-        className="bg-lightDark w-1/2 h-2/3 rounded-full origin-top "
+        className="bg-orange w-1/2 h-2/3 rounded-full origin-top "
       ></div>
       <div
         id="sections"
@@ -163,10 +163,10 @@ function Section() {
   return (
     <div
       id="section"
-      className="bg-lightDark w-full h-full origin-center hover:backdrop-blur-sm transition duration-150 overflow-hidden flex justify-center items-center relative cursor-pointer "
+      className="bg-orange w-full h-full origin-center hover:backdrop-blur-sm transition duration-150 overflow-hidden flex justify-center items-center relative cursor-pointer "
     >
       <motion.img
-        transition={{ delay: 0.1 }}
+        transition={{ delay: 0, duration: 0.2 }}
         whileInView={{ opacity: 1 }}
         // whileHover={{ blur: 1.2 }}
         className="w-full h-full object-cover opacity-0 absolute"
