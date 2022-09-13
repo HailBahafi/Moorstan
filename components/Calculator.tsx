@@ -222,10 +222,10 @@ function DropDown({
 }) {
   return (
     <Dropdown
-      className=" text-black w-64 text-center mr-4 transition duration-150 cursor-pointer z-20"
+      className=" text-black w-64 text-center mr-4 transition duration-150 cursor-pointer z-50"
       controlClassName="text-right border-b-2 pb-2  border-black flex flex-row-reverse"
       baseClassName="text-center items-center"
-      menuClassName="dropdownMenu absolute items-center text-center w-64 transition duration-150 flex flex-col gap-1 mt-2 bg-lightPumpa h-32 overflow-scroll overflow-x-hidden z-[50]"
+      menuClassName="dropdownMenu absolute items-center text-center w-64 transition duration-150 flex flex-col gap-2 mt-2 bg-lightPumpa h-64 overflow-scroll overflow-x-hidden z-[50] text-base"
       placeholderClassName="w-full"
       arrowOpen={<span className="ml-2">&#708;</span>}
       arrowClosed={<span className="ml-2">&#709;</span>}
@@ -265,6 +265,14 @@ function Categories({ setCat }: { setCat: any }) {
 function Treatment({ setTreatment }: { setTreatment: any }) {
   const options = [
     { value: 0, label: "زراعة شعر" },
+    { value: 1, label: "علاج اورام" },
+    { value: 2, label: "علاج سرطان" },
+    { value: 3, label: "علاج امراض عيون" },
+    { value: 4, label: "علاج قلب" },
+    { value: 1, label: "علاج اورام" },
+    { value: 2, label: "علاج سرطان" },
+    { value: 3, label: "علاج امراض عيون" },
+    { value: 4, label: "علاج قلب" },
     { value: 1, label: "علاج اورام" },
     { value: 2, label: "علاج سرطان" },
     { value: 3, label: "علاج امراض عيون" },
@@ -339,7 +347,7 @@ function Treatment({ setTreatment }: { setTreatment: any }) {
 
   return (
     <>
-      <div className="text-center text-[#6c727f] lg:w-96 mt-2 text-xl pt-4 flex md:flex-row-reverse flex-col flex-wrap justify-center gap-y-4 items-center">
+      <div className="text-center text-[#6c727f] lg:w-96 mt-2 text-xl flex md:flex-row-reverse flex-col flex-wrap justify-center gap-y-4 items-center">
         <p className="flex-1">من أجل</p>
         <DropDown
           options={options}
