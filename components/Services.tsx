@@ -17,7 +17,7 @@ export default function Services() {
       <div className=" w-full h-20  flex flex-col justify-center items-center p-3 font-main text-3xl mt-16 ">
         خدماتنا
       </div>
-      <div className="w-full p-4 flex flex-row flex-wrap justify-center gap-x-10 gap-y-6 items-center justify-items-center">
+      <div className="w-full p-4 flex flex-row flex-wrap justify-center gap-x-10 md:gap-y-6 gap-y-4 items-center justify-items-center">
         <Service color="#6c727f"></Service>
         <Service color="#6c727f"></Service>
         <Service color="#6c727f"></Service>

@@ -69,7 +69,7 @@ export default function Background() {
       ></div>
       <div
         id="bg"
-        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[450vh] top-[460vh]"
+        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[450vh] top-[470vh]"
       ></div>
     </div>
   );
