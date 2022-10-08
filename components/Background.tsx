@@ -53,7 +53,7 @@ export default function Background() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="w-full h-full absolute ">
+    <div className="w-full h-full absolute -z-50">
       {/* <div className="w-full md:h-[105vh] h-[115vh]"></div> */}
       <div
         id="bg"
@@ -61,7 +61,15 @@ export default function Background() {
       ></div>
       <div
         id="bg"
-        className="w-full h-[120vh] bg-lightPumpa rounded-t-full absolute md:top-[225vh] top-[235vh]"
+        className="w-full h-[200vh] bg-lightDark rounded-t-full absolute md:top-[225vh] top-[235vh]"
+      ></div>
+      <div
+        id="bg"
+        className="w-full h-[200vh] bg-lightPumpa rounded-t-full absolute md:top-[340vh] top-[350vh]"
+      ></div>
+      <div
+        id="bg"
+        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[450vh] top-[460vh]"
       ></div>
     </div>
   );

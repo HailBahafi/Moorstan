@@ -29,10 +29,11 @@ export default function Service({ color }: { color: string }) {
         // onMouseEnter={() => console.log("ener")}
         layout
         data-open={open}
-        className="service absolute rounded-full left-0 top-0 -z-10 origin-center "
+        className="service absolute rounded-full top-0 -z-10 origin-top "
         style={{ backgroundColor: color }}
       ></motion.div>
-      <p className="text-lg">ارسل تقاريرك</p>
+      <img src="no.png" className="h-10" />
+      <p className="text-lg mt-2">ارسل تقاريرك</p>
       <p className="text-sm mt-2 text-gray-500">
         ارسل تقاريرك الطبية ونحن نقوم بمراجعتها
       </p>

@@ -12,7 +12,7 @@ export default function Calculator() {
   const [treatment, setTreatment] = useState(100);
 
   return (
-    <div className="lg:w-2/3 lg:h-[100vh] w-full h-full flex flex-col justify-start items-center p-6  rounded-[20px] mt-[20vh] z-20 font-main">
+    <div className="lg:w-2/3 lg:h-[100vh] w-full h-full min-h-screen flex flex-col justify-start items-center p-6  rounded-[20px] mt-[20vh] z-20 font-main">
       <div className=" w-full h-20  flex flex-col justify-center items-center p-3  font-main text-3xl ">
         حاسبة التكلفة
       </div>

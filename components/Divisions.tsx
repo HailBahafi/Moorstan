@@ -124,7 +124,7 @@ export default function Divisions() {
   return (
     <div
       id="wrapper"
-      className="lg:w-2/3 lg:h-[100vh] w-full h-screen flex flex-col items-center relative p-6  rounded-[20px] overflow-hidden "
+      className="lg:w-2/3 h-[100vh] w-full flex flex-col items-center relative p-6  rounded-[20px] overflow-hidden "
     >
       <div
         id="medicalSections"

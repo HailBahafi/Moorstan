@@ -14,6 +14,8 @@ import Divisions from "../components/Divisions";
 import Service from "../components/Service";
 import Background from "../components/Background";
 import Calculator from "../components/Calculator";
+import Services from "../components/Services";
+import Contact from "../components/Contact";
 const Home: NextPage = () => {
   return (
     <SmoothScroll>
@@ -33,12 +35,13 @@ const Home: NextPage = () => {
         <div className="flex justify-center items-center w-full md:h-[120px] gap-6 mt-8 flex-wrap">
           <Service color="#dcd2f6"></Service>
           <Service color="#f9edcc"></Service>
-          <Service color="#f3f3f3"></Service>
+          {/* <Service color="#f3f3f3"></Service> */}
         </div>
       </div>
       <Divisions></Divisions>
       <Calculator></Calculator>
-      <div className="h-screen"></div>
+      <Services></Services>
+      <Contact />
     </SmoothScroll>
   );
 };
