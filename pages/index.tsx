@@ -33,8 +33,8 @@ const Home: NextPage = () => {
           <Hero></Hero>
         </div>
         <div className="flex justify-center items-center w-full md:h-[120px] gap-6 mt-8 flex-wrap">
-          <Service color="#dcd2f6"></Service>
-          <Service color="#f9edcc"></Service>
+          {/* <Service color="#dcd2f6"></Service>
+          <Service color="#f9edcc"></Service> */}
           {/* <Service color="#f3f3f3"></Service> */}
         </div>
       </div>
