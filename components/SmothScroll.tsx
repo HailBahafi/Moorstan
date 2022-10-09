@@ -47,6 +47,23 @@ const SmoothScroll: FC<SmoothScrollProps> = (props: SmoothScrollProps) => {
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
+    window.addEventListener("beforeunload", destroy);
+    return () => {
+      window.removeEventListener("beforeunload", destroy);
+    };
+  }, []);
+
+  const destroy = () => {
+    window.scrollTo(0, 0);
+    scrollY.destroy();
+    transform.destroy();
+    spring.destroy();
+    console.log("destroyed");
+  };
+
+  useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) =>
       resizePageHeight(entries)
     );

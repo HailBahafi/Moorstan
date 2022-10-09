@@ -18,15 +18,72 @@ export default function Services() {
         خدماتنا
       </div>
       <div className="w-full p-4 flex flex-row flex-wrap justify-center gap-x-10 md:gap-y-6 gap-y-4 items-center justify-items-center">
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
-        <Service color="#6c727f"></Service>
+        {data.map((s) => (
+          <Service
+            color={s.color}
+            title={s.title}
+            desc={s.desc}
+            icon={"icons/" + s.icon}
+          ></Service>
+        ))}
       </div>
     </div>
   );
 }
+
+const data = [
+  {
+    color: "#f7edcf",
+    title: "إستشارة مجانية",
+    desc: "نقدم استشارات مجانية من قبل أطبائنا المعتمدين",
+    icon: "consulting.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "خدمات المختبرات",
+    desc: "نساعدكم على اجراء الفحوصات المتطلبة للإجراء الطبي",
+    icon: "microscope.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "خدمات الأشعة",
+    desc: "نقدم لكم خطة علاج شاملة ونتائج مثالية",
+    icon: "mri.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "الاستقبال من المطار",
+    desc: "هدفنا هو مساعدتكم في رحلتكم بشكل كامل",
+    icon: "airport.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "مترجمون طبيون",
+    desc: "يرافقكم فريقنا الطبي اينما ذهبتم",
+    icon: "woman.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "المتابعة",
+    desc: "يتابع فريقنا الطبي حالتك حتى بعد عودتكم الى الوطن",
+    icon: "follow.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "منتجات طبية",
+    desc: "نقدم لكم خدمات شراء وتوصيل جميع انواع الأدوية من الهند",
+    icon: "medicine.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "حجز رحلة الطيران",
+    desc: "نقدم ايضاً لكم خدمة حجز الطيران ذهاباً وعودة",
+    icon: "ticket.png",
+  },
+  {
+    color: "#f7edcf",
+    title: "توفير سكن",
+    desc: "نتعامل مع افضل اماكن السكن والفنادق باسعار مناسبة",
+    icon: "calendar.png",
+  },
+];

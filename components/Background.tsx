@@ -11,6 +11,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Background() {
   let enter = true;
+  const [isPhone, setIsPhone] = useState(false);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(Flip);
@@ -22,7 +24,6 @@ export default function Background() {
         borderRadius: "0px",
         ease: "expo.out",
         duration: 0.4,
-
         scrollTrigger: {
           once: true,
           trigger: bg as HTMLDivElement,
@@ -32,22 +33,45 @@ export default function Background() {
         },
       });
     });
+
+    setIsPhone(window.innerHeight > window.innerWidth);
   }, []);
 
-  const flip = (trigger: ScrollTrigger) => {
-    console.log("scrolling");
-    let scrollTween = gsap.to(window, {
-      duration: 0.5,
-      onUpdate: () => {
-        document.documentElement.scrollTop =
-          (trigger.trigger as HTMLDivElement)!.offsetTop;
-        document.body.style.overflow = "hidden";
-      },
-      onComplete: () => {
-        document.body.style.overflow = "auto";
-      },
-      overwrite: true,
+  function movePics(elm: Element | undefined) {
+    let children = gsap.utils.toArray((elm as HTMLDivElement).children);
+
+    children.forEach((img) => {
+      console.log((img as HTMLImageElement).y);
+      gsap.to(img as HTMLImageElement, {
+        y: "-=1000",
+        ease: "expo.out",
+        duration: 1,
+        delay: gsap.utils.random(0, 0.5),
+      });
     });
+    console.log(children);
+  }
+
+  let flipping = false;
+
+  const flip = (trigger: ScrollTrigger) => {
+    if (!flipping) {
+      flipping = true;
+      movePics(trigger.trigger);
+      let scrollTween = gsap.to(window, {
+        duration: 0.7,
+        onUpdate: () => {
+          document.documentElement.scrollTop =
+            (trigger.trigger as HTMLDivElement)!.offsetTop;
+          document.body.style.overflow = "hidden";
+        },
+        onComplete: () => {
+          document.body.style.overflow = "auto";
+          flipping = false;
+        },
+        overwrite: true,
+      });
+    }
   };
 
   const [open, setOpen] = useState(false);
@@ -58,18 +82,57 @@ export default function Background() {
       <div
         id="bg"
         className="w-full h-[200vh] bg-lightOrange rounded-t-full absolute md:top-[105vh] top-[115vh]"
-      ></div>
+      >
+        {!isPhone && (
+          <>
+            <img
+              src="pics/heart.png"
+              className="w-56 translate-x-20 translate-y-[1100px] absolute"
+            />
+            <img
+              src="pics/Syringe.png"
+              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute"
+            />
+          </>
+        )}
+      </div>
       <div
         id="bg"
         className="w-full h-[200vh] bg-lightDark rounded-t-full absolute md:top-[225vh] top-[235vh]"
-      ></div>
+      >
+        {!isPhone && (
+          <>
+            <img
+              src="pics/caculator.png"
+              className="w-48 translate-x-20 translate-y-[1300px] absolute"
+            />
+            <img
+              src="pics/money.png"
+              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute"
+            />
+          </>
+        )}
+      </div>
       <div
         id="bg"
         className="w-full h-[200vh] bg-lightPumpa rounded-t-full absolute md:top-[340vh] top-[350vh]"
-      ></div>
+      >
+        {!isPhone && (
+          <>
+            <img
+              src="pics/hand.png"
+              className="w-48 translate-x-20 translate-y-[1100px] absolute"
+            />
+            <img
+              src="pics/check.png"
+              className="w-48 -translate-x-20 right-0 translate-y-[1300px] absolute"
+            />
+          </>
+        )}
+      </div>
       <div
         id="bg"
-        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[450vh] top-[470vh]"
+        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[455vh] top-[470vh]"
       ></div>
     </div>
   );

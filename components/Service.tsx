@@ -8,7 +8,17 @@ import { Flip } from "gsap/dist/Flip";
 
 import { motion } from "framer-motion";
 
-export default function Service({ color }: { color: string }) {
+export default function Service({
+  color,
+  title,
+  desc,
+  icon,
+}: {
+  color: string;
+  title: string;
+  desc: string;
+  icon: string;
+}) {
   useEffect(() => {
     // gsap.to("#hosp", {
     //   stagger: 0.5,
@@ -32,11 +42,9 @@ export default function Service({ color }: { color: string }) {
         className="service absolute rounded-full top-0 -z-10 origin-top "
         style={{ backgroundColor: color }}
       ></motion.div>
-      <img src="no.png" className="h-10" />
-      <p className="text-lg mt-2">ارسل تقاريرك</p>
-      <p className="text-sm mt-2 text-gray-500">
-        ارسل تقاريرك الطبية ونحن نقوم بمراجعتها
-      </p>
+      <img src={icon} className="h-8 mt-1" />
+      <p className="text-lg mt-3">{title}</p>
+      <p className="text-sm mt-2 text-gray-500">{desc}</p>
     </motion.div>
   );
 }

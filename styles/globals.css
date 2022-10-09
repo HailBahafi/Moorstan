@@ -57,6 +57,11 @@ a {
   /* transform: translate(20px, 16px); */
 }
 
+.-option {
+  width: 100%;
+  padding: 4px;
+}
+
 .dropdownMenu::-webkit-scrollbar {
   width: 3px;
 }

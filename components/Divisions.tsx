@@ -42,21 +42,6 @@ export default function Divisions() {
     });
   }, []);
 
-  const goToSection = () => {
-    let scrollTween = gsap.to(window, {
-      duration: 0.5,
-      onUpdate: () => {
-        document.documentElement.scrollTop =
-          document.getElementById("wrapper")!.offsetTop;
-        document.body.style.overflow = "hidden";
-      },
-      onComplete: () => {
-        document.body.style.overflow = "auto";
-      },
-      overwrite: true,
-    });
-  };
-
   const flip = () => {
     console.log("flipping");
     let state = Flip.getState([ref.current], { props: "border-radius" });

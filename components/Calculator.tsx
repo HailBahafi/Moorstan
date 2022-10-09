@@ -116,9 +116,7 @@ function Bill() {
           cx="50%"
           cy="50%"
           r="41"
-          fill={"#d9d2f0"}
-          // stroke="#000"
-          // strokeWidth={10}
+          fill={"#f3f3f3"}
           variants={draw}
           custom={1}
         />
@@ -226,8 +224,8 @@ function DropDown({
     <Dropdown
       className=" text-black w-64 text-center mr-4 transition duration-150 cursor-pointer z-50"
       controlClassName="text-right border-b-2 pb-2  border-black flex flex-row-reverse"
-      baseClassName="text-center items-center"
-      menuClassName="dropdownMenu absolute items-center text-center w-64 transition duration-150 flex flex-col gap-2 mt-2 bg-lightPumpa h-64 overflow-scroll overflow-x-hidden z-[50] text-base"
+      baseClassName="text-center items-center "
+      menuClassName="dropdownMenu absolute items-center text-center w-64 transition duration-150 flex flex-col mt-2 bg-lightDark h-64 overflow-scroll overflow-x-hidden z-[50] text-base"
       placeholderClassName="w-full"
       arrowOpen={<span className="ml-2">&#708;</span>}
       arrowClosed={<span className="ml-2">&#709;</span>}
