@@ -18,8 +18,9 @@ export default function Services() {
         خدماتنا
       </div>
       <div className="w-full p-4 flex flex-row flex-wrap justify-center gap-x-10 md:gap-y-6 gap-y-4 items-center justify-items-center">
-        {data.map((s) => (
+        {data.map((s, i) => (
           <Service
+            key={i + "s"}
             color={s.color}
             title={s.title}
             desc={s.desc}
