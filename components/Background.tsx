@@ -53,13 +53,14 @@ export default function Background() {
   }
 
   let flipping = false;
-
+  let offset = 0;
   const flip = (trigger: ScrollTrigger) => {
     if (!flipping) {
       flipping = true;
       movePics(trigger.trigger);
       let scrollTween = gsap.to(window, {
         duration: 0.7,
+        onStart: () => {},
         onUpdate: () => {
           document.documentElement.scrollTop =
             (trigger.trigger as HTMLDivElement)!.offsetTop;
@@ -81,58 +82,64 @@ export default function Background() {
       {/* <div className="w-full md:h-[105vh] h-[115vh]"></div> */}
       <div
         id="bg"
-        className="w-full h-[200vh] bg-lightOrange rounded-t-full absolute md:top-[105vh] top-[115vh]"
+        className="w-full h-[200vh] bg-lightOrange rounded-t-full absolute md:top-[105vh] top-[115vh] will-change-auto"
       >
         {!isPhone && (
           <>
             <img
               src="pics/heart.png"
-              className="w-56 translate-x-20 translate-y-[1100px] absolute"
+              className="w-56 translate-x-20 translate-y-[1100px] absolute will-change-transform"
             />
             <img
               src="pics/Syringe.png"
-              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute"
+              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute will-change-transform"
             />
           </>
         )}
       </div>
       <div
         id="bg"
-        className="w-full h-[200vh] bg-lightDark rounded-t-full absolute md:top-[225vh] top-[235vh]"
+        className="w-full h-[200vh] bg-lightDark rounded-t-full absolute md:top-[225vh] top-[235vh] will-change-auto"
       >
         {!isPhone && (
           <>
             <img
               src="pics/caculator.png"
-              className="w-48 translate-x-20 translate-y-[1300px] absolute"
+              className="w-48 translate-x-20 translate-y-[1300px] absolute will-change-transform"
             />
             <img
               src="pics/money.png"
-              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute"
+              className="w-48 -translate-x-20 right-0 translate-y-[1200px] absolute will-change-transform"
             />
           </>
         )}
       </div>
       <div
         id="bg"
-        className="w-full h-[200vh] bg-lightPumpa rounded-t-full absolute md:top-[340vh] top-[350vh]"
+        className="w-full h-[200vh] bg-lightPumpa rounded-t-full absolute md:top-[340vh] top-[350vh] will-change-auto"
       >
+        <div className="w-full flex justify-center items-center">
+          <img
+            src="pics/scroll.png"
+            className="w-32 place-self-center translate-y-[2000px] absolute will-change-transform"
+          />
+        </div>
         {!isPhone && (
           <>
-            <img
+            {/* <img
               src="pics/hand.png"
-              className="w-48 translate-x-20 translate-y-[1100px] absolute"
-            />
-            <img
+              className="w-48 translate-x-20 translate-y-[1100px] absolute will-change-transform"
+            /> */}
+            {/* <img
               src="pics/check.png"
-              className="w-48 -translate-x-20 right-0 translate-y-[1300px] absolute"
-            />
+              className="w-48 -translate-x-20 right-0 translate-y-[1300px] absolute will-change-transform"
+            /> */}
           </>
         )}
       </div>
       <div
         id="bg"
-        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[455vh] top-[470vh]"
+        className="w-full h-[120vh] bg-lightOrange rounded-t-full absolute md:top-[455vh] top-[485vh] will-change-auto"
       ></div>
     </div>
   );

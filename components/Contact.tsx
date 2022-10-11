@@ -12,8 +12,14 @@ import Service from "./Service";
 export default function Contact() {
   useEffect(() => {}, []);
 
+  const gotolast = () => {
+    setTimeout(() => {
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    }, 100);
+  };
+
   return (
-    <div className="w-full max-w-2xl h-full min-h-screen mt-[20vh] p-4 select-none">
+    <div className="w-full max-w-2xl h-full min-h-screen md:mt-[20vh] mt-[25vh]  p-4 select-none z-50">
       <div className=" w-full h-15  flex flex-col justify-center items-center p-3 mb-2 font-main text-3xl mt-6 text-pumpa">
         تواصل معنا
       </div>

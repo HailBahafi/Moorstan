@@ -39,12 +39,12 @@ export default function Service({
         // onMouseEnter={() => console.log("ener")}
         layout
         data-open={open}
-        className="service absolute rounded-full top-0 -z-10 origin-top "
+        className="service absolute rounded-full top-0 -z-10 origin-top will-change-transform"
         style={{ backgroundColor: color }}
       ></motion.div>
       <img src={icon} className="h-8 mt-1" />
       <p className="text-lg mt-3">{title}</p>
-      <p className="text-sm mt-2 text-gray-500">{desc}</p>
+      <p className="md:text-sm text-xs mt-2 text-gray-500">{desc}</p>
     </motion.div>
   );
 }

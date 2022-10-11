@@ -20,7 +20,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/SmothScroll.tsx"
+    "components/SmothScroll.tsx",
+    "hooks/useWindowSize.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -16,9 +16,20 @@ import Background from "../components/Background";
 import Calculator from "../components/Calculator";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
+
 const Home: NextPage = () => {
+  useEffect(() => {
+    var viewport = document.querySelector("meta[name=viewport]");
+    if (viewport)
+      viewport.setAttribute(
+        "content",
+        //@ts-ignore
+        viewport.content + ", height=" + window.innerHeight
+      );
+  }, []);
+
   return (
-    <SmoothScroll>
+    <div className="flex flex-col justify-center items-center  w-full top-0 left-0 overflow-hidden relative">
       <Background></Background>
       <div className="md:h-[110vh] h-[120vh] w-full">
         <div className="w-full h-14 pt-2 flex flex-row justify-center items-center">
@@ -32,17 +43,13 @@ const Home: NextPage = () => {
         <div className="relative w-full h-[60vh] pt-20 flex justify-center  items-center font-main">
           <Hero></Hero>
         </div>
-        <div className="flex justify-center items-center w-full md:h-[120px] gap-6 mt-8 flex-wrap">
-          {/* <Service color="#dcd2f6"></Service>
-          <Service color="#f9edcc"></Service> */}
-          {/* <Service color="#f3f3f3"></Service> */}
-        </div>
+        <div className="flex justify-center items-center w-full md:h-[120px] gap-6 mt-8 flex-wrap"></div>
       </div>
       <Divisions></Divisions>
       <Calculator></Calculator>
       <Services></Services>
       <Contact />
-    </SmoothScroll>
+    </div>
   );
 };
 
