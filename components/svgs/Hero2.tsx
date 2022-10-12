@@ -62,7 +62,9 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
           width={898}
           height={1224}
           transform="translate(103.5) scale(.49)"
-          xlinkHref="./pngs/doctor.png"
+          id="doc"
+          className="opacity-0"
+          xlinkHref="./pngs/womandoc.png"
           style={{
             clipPath: "url(#b)",
           }}

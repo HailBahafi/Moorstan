@@ -71,6 +71,36 @@ a {
   /* transform: translate(20px, 16px); */
   /* transform: translate(0px, 0px); */
 }
+
+.wrapper .boxes .box {
+  height: 30px;
+}
+
+.wrapper {
+  /* position: fixed; */
+  width: 150%;
+  height: 30px;
+  /* transform: translateX(-500px); */
+  /* top: 40%; */
+  /* background: grey; */
+  overflow: hidden;
+}
+.wrapper .box {
+  position: absolute;
+  /* width: 50px; */
+  /* height: 80px; */
+  /* background-color: grey; */
+  color: black;
+  font-size: 40px;
+  font-weight: 600;
+  /* line-height: 50px; */
+  text-align: center;
+}
+.wrapper .boxes {
+  position: relative;
+  /* left: -150px; */
+}
+
 .service {
   width: 55px;
   height: 55px;

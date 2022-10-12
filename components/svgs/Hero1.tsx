@@ -9,13 +9,14 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
       delay: 0.3,
       duration: 2,
       opacity: 1,
+      stagger: 0.2,
       ease: "expo.out",
     });
-    gsap.to("#docWraper", {
-      duration: 1,
-      scale: 1,
-      ease: "expo.out",
-    });
+    // gsap.to("#docWraper", {
+    //   duration: 1,
+    //   scale: 1,
+    //   ease: "expo.out",
+    // });
   }, []);
 
   return (

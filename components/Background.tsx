@@ -62,9 +62,11 @@ export default function Background() {
         duration: 0.7,
         onStart: () => {},
         onUpdate: () => {
-          document.documentElement.scrollTop =
-            (trigger.trigger as HTMLDivElement)!.offsetTop;
-          document.body.style.overflow = "hidden";
+          if (!globalThis.skipped) {
+            document.documentElement.scrollTop =
+              (trigger.trigger as HTMLDivElement)!.offsetTop;
+            document.body.style.overflow = "hidden";
+          }
         },
         onComplete: () => {
           document.body.style.overflow = "auto";

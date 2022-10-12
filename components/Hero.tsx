@@ -24,10 +24,6 @@ export default function Hero() {
       duration: 1.5,
       opacity: 1,
     });
-    gsap.to("#hosp", {
-      stagger: 0.5,
-      opacity: 1,
-    });
   }, []);
 
   return (
@@ -54,23 +50,7 @@ export default function Hero() {
           <span className="text-pumpa">هندية</span>
           <span className="text-orange pr-4">عالمية</span>
         </p>
-        <div className="flex flex-row justify-center items-center h-12 mt-8 gap-4">
-          <img
-            id="hosp"
-            src="pngs/hospitals/1.png"
-            className="h-full opacity-0"
-          ></img>
-          <img
-            id="hosp"
-            src="pngs/hospitals/2.png"
-            className="h-full opacity-0"
-          ></img>
-          <img
-            id="hosp"
-            src="pngs/hospitals/3.png"
-            className="h-full opacity-0"
-          ></img>
-        </div>
+        <div className="flex flex-row justify-center items-center h-12 mt-8 gap-4"></div>
         <Network></Network>
       </div>
       <div className="md:w-1/4  2xl:w-1/5 sm:w-1/3 w-1/2 h-1/4 -translate-y-14 hidden justify-center items-center lg:flex">

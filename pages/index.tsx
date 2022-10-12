@@ -16,6 +16,7 @@ import Background from "../components/Background";
 import Calculator from "../components/Calculator";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
+import Logos from "../components/Logos";
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -36,6 +37,10 @@ const Home: NextPage = () => {
           <button
             id="contact"
             className="p-3 h-full rounded-b-3xl bg-pumpa hover:bg-orange rounded-xl text-white transition duration-150 z-30 font-main mt-10"
+            onClick={() => {
+              window.scrollTo(0, document.documentElement.scrollHeight);
+              globalThis.skipped = true;
+            }}
           >
             تواصل معنا
           </button>
@@ -43,6 +48,7 @@ const Home: NextPage = () => {
         <div className="relative w-full h-[60vh] pt-20 flex justify-center  items-center font-main">
           <Hero></Hero>
         </div>
+        <Logos />
         <div className="flex justify-center items-center w-full md:h-[120px] gap-6 mt-8 flex-wrap"></div>
       </div>
       <Divisions></Divisions>

@@ -96,6 +96,15 @@ function Info({ icon, data }: { icon: string; data: string }) {
       onClick={() => {
         copy();
       }}
+      onSelect={() => {
+        copy();
+      }}
+      onMouseUp={() => {
+        copy();
+      }}
+      onTouchStart={() => {
+        copy();
+      }}
     >
       <div
         className="absolute w-full h-full bg-pumpa opacity-0 flex justify-center items-center font-main text-white"
@@ -104,7 +113,7 @@ function Info({ icon, data }: { icon: string; data: string }) {
         تم النسخ
       </div>
       <img src={icon} className="h-8" />
-      <p className="font-main mt-3" ref={ref}>
+      <p className="font-main mt-3 md:text-base text-xs" ref={ref}>
         {data}
       </p>
     </div>

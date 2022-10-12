@@ -165,20 +165,23 @@ export default function Divisions() {
         id="sections"
         className="grid lg:grid-cols-4 lg:grid-rows-2  grid-cols-2 grid-rows-4 w-full h-full hidden rounded-[20px] overflow-hidden justify-center items-center"
       >
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
-        <Section></Section>
+        {data.map((d) => {
+          return <Section title={d.title} header={d.header} data={d.data} />;
+        })}
       </div>
     </div>
   );
 }
 
-function Section() {
+function Section({
+  data,
+  title,
+  header,
+}: {
+  data: any;
+  title: string;
+  header: string;
+}) {
   const [open, setOpen] = useState(false);
 
   const _open = () => {
@@ -200,7 +203,7 @@ function Section() {
     <>
       {open && (
         <div
-          className="mostly-customized-scrollbar w-full h-screen bg-white absolute z-[100] -m-6 overflow-y-auto  opacity-0 rounded-t-lg "
+          className="mostly-customized-scrollbar w-full h-screen bg-white absolute z-[100] -m-6 overflow-y-scroll  opacity-0 rounded-t-lg "
           id="division"
         >
           <button
@@ -216,9 +219,11 @@ function Section() {
             alt=""
             className="w-full h-80 object-cover mt-4"
           />
-          <p className="font-main text-lg  p-2 p-4 mt-1 text-right text-pumpa">
-            {" "}
-            علاج السرطان في الهند
+          <p className="font-main text-xl  p-4 mt-1 text-right text-pumpa">
+            {header}
+          </p>
+          <p className="font-main text-lg p-4 mt-1  text-dark text-justify leading-8 mb-20">
+            {data}
           </p>
         </div>
       )}
@@ -243,7 +248,7 @@ function Section() {
             }}
             className="w-4 h-4 inline-block mr-2 mb-0.5"
           ></span>
-          علاج السرطان
+          {title}
         </div>
         <motion.div
           whileHover={{ opacity: 0.4 }}
@@ -255,3 +260,25 @@ function Section() {
     </>
   );
 }
+
+const data = [
+  {
+    title: "اللاورام",
+    header: "علاج الاورام في الهند",
+    data: (
+      <p dir="rtl" lang="ar">
+        تتخذ الهند مكافحة السرطان وجها لوجه مع البحث والتطوير الدقيق جنبا إلى
+        جنب مع فهم أفضل للسرطان وتطبيق التكنولوجيا الحديثة. على مدى العقد الماضي
+        ، شهدت هذه الثورة عددا من االختراقات الهائلة المنبثقة من البالد. وقد
+        وضعت هذه التطورات الهند على رأس المعركة ضد السرطان على الصعيد العالمي.
+        ولم يعد هناك داع للخوف من السرطان طالما كنت في ايادي امينة. فاالن بفضل
+        تطور التكنولوجيا يمكن عالجه بأمان مع الحد األدنى من اآلثار الجانبية أو
+        بدونها بافضل االسعار. ونرشد المريض الى افضل المراكز والفرق المتخصصة في
+        علم األورام من كبار األطباء واختصاصيي السرطان في بنغالور الذين تدربوا
+        على نطاق واسع في الواليات المتحدة وبريطانيا والهند. طرق العالج: يتم
+        استخدام احدث الوسائل لعالج االورام مثل زراعة نخاع العظم والخاليا الجذعية
+        باالضافة الى انسب الجرعات الكيماوية واالشعاعات والعالجات المناعية.&nbsp;
+      </p>
+    ),
+  },
+];
