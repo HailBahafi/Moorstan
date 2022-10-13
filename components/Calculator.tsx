@@ -46,6 +46,7 @@ function Bill() {
       transformOrigin: "center center",
       borderWidth: 5,
     });
+    gsap.set("#result", { height: "0%" });
     gsap.to("#result", {
       delay: 2.4,
       duration: 0.1,
@@ -123,7 +124,8 @@ function Bill() {
         <motion.foreignObject
           id={"result"}
           className={"w-full"}
-          // height={"%"}
+          height={"100%"}
+          width={"100%"}
         >
           <body>
             <div className="w-full  text-black font-main z-30 p-4 flex flex-col justify-center items-center">

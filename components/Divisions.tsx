@@ -14,6 +14,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 //@ts-ignore
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 
+import { data } from "./divisionsData";
+
 export default function Divisions() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -165,8 +167,15 @@ export default function Divisions() {
         id="sections"
         className="grid lg:grid-cols-4 lg:grid-rows-2  grid-cols-2 grid-rows-4 w-full h-full hidden rounded-[20px] overflow-hidden justify-center items-center"
       >
-        {data.map((d) => {
-          return <Section title={d.title} header={d.header} data={d.data} />;
+        {data.map((d, i) => {
+          return (
+            <Section
+              key={"divi" + i}
+              title={d.title}
+              header={d.header}
+              data={d.data}
+            />
+          );
         })}
       </div>
     </div>
@@ -260,25 +269,3 @@ function Section({
     </>
   );
 }
-
-const data = [
-  {
-    title: "اللاورام",
-    header: "علاج الاورام في الهند",
-    data: (
-      <p dir="rtl" lang="ar">
-        تتخذ الهند مكافحة السرطان وجها لوجه مع البحث والتطوير الدقيق جنبا إلى
-        جنب مع فهم أفضل للسرطان وتطبيق التكنولوجيا الحديثة. على مدى العقد الماضي
-        ، شهدت هذه الثورة عددا من االختراقات الهائلة المنبثقة من البالد. وقد
-        وضعت هذه التطورات الهند على رأس المعركة ضد السرطان على الصعيد العالمي.
-        ولم يعد هناك داع للخوف من السرطان طالما كنت في ايادي امينة. فاالن بفضل
-        تطور التكنولوجيا يمكن عالجه بأمان مع الحد األدنى من اآلثار الجانبية أو
-        بدونها بافضل االسعار. ونرشد المريض الى افضل المراكز والفرق المتخصصة في
-        علم األورام من كبار األطباء واختصاصيي السرطان في بنغالور الذين تدربوا
-        على نطاق واسع في الواليات المتحدة وبريطانيا والهند. طرق العالج: يتم
-        استخدام احدث الوسائل لعالج االورام مثل زراعة نخاع العظم والخاليا الجذعية
-        باالضافة الى انسب الجرعات الكيماوية واالشعاعات والعالجات المناعية.&nbsp;
-      </p>
-    ),
-  },
-];
