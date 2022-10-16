@@ -1,0 +1,32 @@
+export const data = [
+  {
+    label: "زراعة كبد",
+    min: 1000,
+    max: 5000,
+    duurationInIndia: 30,
+    durationInHospital: 4,
+    turkey: 30000,
+    germany: 30000,
+    usa: 30000,
+  },
+  {
+    label: "تبديل ركبة",
+    min: 1000,
+    max: 5000,
+    duurationInIndia: 30,
+    durationInHospital: 4,
+    turkey: 30000,
+    germany: 30000,
+    usa: 30000,
+  },
+  {
+    label: "علاج مفاصل",
+    min: 60000,
+    max: 80000,
+    duurationInIndia: 30,
+    durationInHospital: 4,
+    turkey: 30000,
+    germany: 30000,
+    usa: 30000,
+  },
+];

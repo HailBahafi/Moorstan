@@ -61,7 +61,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
         <image
           width={898}
           height={1224}
-          transform="translate(103.5) scale(.49)"
+          transform="translate(120.5 , 74) scale(.45)"
           id="doc"
           className="opacity-0"
           xlinkHref="./pngs/womandoc.png"

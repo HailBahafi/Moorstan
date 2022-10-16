@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 //@ts-ignore
 import { gsap } from "gsap/dist/gsap";
 
+import emailjs from "@emailjs/browser";
+
 //@ts-ignore
 import { Flip } from "gsap/dist/Flip";
 
@@ -12,10 +14,56 @@ import Service from "./Service";
 export default function Contact() {
   useEffect(() => {}, []);
 
+  const [feedback, setFeedback] = useState(<div></div>);
+  const form = useRef() as React.MutableRefObject<HTMLFormElement>;
+
   const gotolast = () => {
     setTimeout(() => {
       window.scrollTo(0, document.documentElement.scrollHeight);
     }, 100);
+  };
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+    console.log(e.target);
+
+    const inputs = document.querySelectorAll("#input");
+    for (let i = 0; i < 3; i++) {
+      if (i == 2) continue;
+      if (e.target[i].value == "") {
+        setFeedback(
+          <div className="text-red-700 text-lg text-center">
+            {e.target[i].id} مفقود
+          </div>
+        );
+        return;
+      }
+    }
+    setFeedback(
+      <div className="text-orange text-center mt-2" dir="rtl">
+        شكراً لك ! سوف نقوم بالتواصل معك فوراً.
+      </div>
+    );
+
+    emailjs
+      .sendForm(
+        "service_f8lnll8",
+        "template_zxw66mg",
+        form.current!,
+        "ipFgnqh9oaOBRsCmm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target[0].value = "";
+          e.target[1].value = "";
+          e.target[2].value = "";
+          e.target[3].value = "";
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   return (
@@ -32,23 +80,33 @@ export default function Contact() {
         <Info icon="icons/whatsapp.png" data="+91774639193"></Info>
         <Info icon="icons/instagram.png" data="@indiahealth"></Info>
       </div>
-      <div className="bg-white w-full h-full rounded-xl md:p-6 p-4 font-main flex flex-col mb-12 ">
-        <div className=" flex flex-row-reverse ">
+      <form
+        className="bg-white w-full h-full rounded-xl md:p-6 p-4 font-main flex flex-col mb-12 "
+        onSubmit={sendEmail}
+        ref={form}
+      >
+        <div className=" flex flex-row-reverse">
           <div className="flex flex-col items-end w-full">
             <p className="text-pumpa">الاسم</p>
             <input
+              name="from_name"
+              id="input"
               placeholder="ضع اسمك هنا"
               className="text-right border-2 rounded-lg mt-1 p-1 w-full "
             ></input>
             <p className="text-pumpa mt-1">الرقم</p>
             <input
+              name="from_phone"
               placeholder="ضع رقمك هنا"
+              id="input"
               className="text-right border-2 rounded-lg mt-1 p-1 w-full "
             ></input>
             <p className="text-pumpa mt-1 w-full text-center">أو</p>
             <p className="text-pumpa mt-1">الأيميل</p>
             <input
               placeholder="ضع ايميلك هنا"
+              id="input"
+              name="from_email"
               className="text-right border-2 rounded-lg mt-1 p-1 w-full "
             ></input>
           </div>
@@ -56,16 +114,23 @@ export default function Contact() {
             <p className="text-pumpa mt-1">الرسالة</p>
             <textarea
               placeholder="ضع رسالتك هنا"
+              id="input"
+              name="message"
               className="text-right border-2 rounded-xl mt-1 p-2 w-full h-full "
             ></textarea>
           </div>
         </div>
         <div className="items-center justify-center flex mt-6">
-          <button className="bg-pumpa w-fit p-2 rounded-xl text-white">
+          <button
+            className="bg-pumpa w-fit p-2 rounded-xl text-white"
+            type="submit"
+            value="Send"
+          >
             ارسل الرسالة
           </button>
         </div>
-      </div>
+        {feedback}
+      </form>
     </div>
   );
 }

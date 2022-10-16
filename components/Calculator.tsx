@@ -7,6 +7,8 @@ import { gsap } from "gsap/dist/gsap";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
+import { data } from "./calculatorData";
+
 export default function Calculator() {
   const [cat, setCat] = useState(0);
   const [treatment, setTreatment] = useState(100);
@@ -24,7 +26,7 @@ export default function Calculator() {
   );
 }
 
-function Bill() {
+function Bill({ index }: { index: number }) {
   useEffect(() => {
     const main = gsap
       .timeline({
@@ -43,6 +45,7 @@ function Bill() {
     gsap.to("#resultW", {
       delay: 2.4,
       duration: 0.1,
+
       transformOrigin: "center center",
       borderWidth: 5,
     });
@@ -67,6 +70,10 @@ function Bill() {
       // height: 1000,
     });
   }, []);
+
+  useEffect(() => {
+    console.log("index", index);
+  }, [index]);
 
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -132,24 +139,29 @@ function Bill() {
               <div className="flex flex-row-reverse  gap-8 flex-wrap items-center justify-center mt-4">
                 <Price
                   label="تكلفة العلاج"
-                  price1={2000}
-                  price2={3000}
+                  price1={data[index].min}
+                  price2={data[index].max}
                   className="text-2xl"
                 ></Price>
                 <div className="flex flex-col justify-center items-center ">
                   <p className="text-lg">مقارنة الاسعار</p>
                   <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
-                    <Price label="تركيا" price1={2000}></Price>
-                    <Price label="مصر" price1={2000}></Price>
-                    <Price label="امريكا" price1={2000}></Price>
-                    <Price label="المانيا" price1={2000}></Price>
+                    <Price label="تركيا" price1={data[index].turkey}></Price>
+                    <Price label="امريكا" price1={data[index].usa}></Price>
+                    <Price label="المانيا" price1={data[index].germany}></Price>
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-center ">
                   <p className="text-lg">المدة</p>
                   <div className="flex flex-row flex-wrap gap-6 justify-center mt-2">
-                    <Info label=" في المستشفى" info={"5 ايام"}></Info>
-                    <Info label="في الهند" info={"5 ايام"}></Info>
+                    <Info
+                      label=" في المستشفى"
+                      info={data[index].duurationInIndia + " ايام"}
+                    ></Info>
+                    <Info
+                      label="في الهند"
+                      info={data[index].durationInHospital + " ايام"}
+                    ></Info>
                   </div>
                 </div>
 
@@ -265,25 +277,17 @@ function Categories({ setCat }: { setCat: any }) {
   );
 }
 function Treatment({ setTreatment }: { setTreatment: any }) {
-  const options = [
-    { value: 0, label: "زراعة شعر" },
-    { value: 1, label: "علاج اورام" },
-    { value: 2, label: "علاج سرطان" },
-    { value: 3, label: "علاج امراض عيون" },
-    { value: 4, label: "علاج قلب" },
-    { value: 1, label: "علاج اورام" },
-    { value: 2, label: "علاج سرطان" },
-    { value: 3, label: "علاج امراض عيون" },
-    { value: 4, label: "علاج قلب" },
-    { value: 1, label: "علاج اورام" },
-    { value: 2, label: "علاج سرطان" },
-    { value: 3, label: "علاج امراض عيون" },
-    { value: 4, label: "علاج قلب" },
-  ];
+  const options: any[] = [];
+  data.forEach((e, i) => {
+    options.push({ value: i, label: e.label });
+  });
+
+  useEffect(() => {}, []);
 
   let loadingTime = 2000;
   const [chose, setChose] = useState(false);
   const [ShowBill, setShowBill] = useState(false);
+  const [currentOption, setCurrentOption] = useState(99);
 
   const btn = useRef<HTMLButtonElement>(null);
   const calculate = useRef<HTMLParagraphElement>(null);
@@ -291,7 +295,10 @@ function Treatment({ setTreatment }: { setTreatment: any }) {
   const done = useRef<HTMLParagraphElement>(null);
 
   const onSelectTreatment = (o: any) => {
+    setShowBill(false);
     setTreatment(o.value);
+    setCurrentOption(o.value);
+
     setChose(true);
     if (done.current) {
       done.current.classList.remove("opacity-100");
@@ -333,17 +340,6 @@ function Treatment({ setTreatment }: { setTreatment: any }) {
         done.current.classList.remove("opacity-0");
         done.current.classList.add("opacity-100");
       }
-      // let scrollTween = gsap.to(window, {
-      //   duration: 0.5,
-      //   onUpdate: () => {
-      //     document.documentElement.scrollTop += 5;
-      //     document.body.style.overflow = "hidden";
-      //   },
-      //   onComplete: () => {
-      //     document.body.style.overflow = "auto";
-      //   },
-      //   overwrite: true,
-      // });
     }, loadingTime);
   };
 
@@ -378,7 +374,7 @@ function Treatment({ setTreatment }: { setTreatment: any }) {
           </p>
         </button>
       </div>
-      {ShowBill && <Bill></Bill>}
+      {ShowBill && <Bill index={currentOption}></Bill>}
     </>
   );
 }

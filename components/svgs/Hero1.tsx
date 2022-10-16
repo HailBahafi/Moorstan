@@ -44,7 +44,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
             d="M290.76 581.75c-93.19 0-169-75.82-169-169V81.23A81.32 81.32 0 0 1 203 0h240.27a81.32 81.32 0 0 1 81.23 81.23v331.51c0 93.19-75.82 169-169 169Z"
             style={{
               fill: "none",
-              transform: "translate(-190px, 27px) scale(2, 2)",
+              transform: "translate(-190px, -27px) scale(2, 2)",
             }}
           />
         </clipPath>
@@ -84,7 +84,7 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => {
           width={898}
           height={1224}
           className="opacity-0"
-          transform="translate(103.5) scale(.49)"
+          transform="translate(120.5 , 70) scale(.45)"
           xlinkHref="./pngs/doctor.png"
           style={{
             clipPath: "url(#b)",

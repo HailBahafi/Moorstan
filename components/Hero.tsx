@@ -46,8 +46,9 @@ export default function Hero() {
         <p className="text-5xl text-center text-[#494949] text-top leading-tight">
           شبكة مستشفيات
         </p>
-        <p className="text-5xl text-center pt-2">
+        <p className="text-5xl text-center pt-2 leading-snug">
           <span className="text-pumpa">هندية</span>
+          <span className="text-dark"> بمعايير</span>
           <span className="text-orange pr-4">عالمية</span>
         </p>
         <div className="flex flex-row justify-center items-center h-12 mt-8 gap-4"></div>

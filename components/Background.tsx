@@ -123,7 +123,7 @@ export default function Background() {
         <div className="w-full flex justify-center items-center">
           <img
             src="pics/scroll.png"
-            className="w-32 place-self-center translate-y-[2000px] absolute will-change-transform"
+            className="w-16 place-self-center translate-y-[2000px] absolute will-change-transform"
           />
         </div>
         {!isPhone && (

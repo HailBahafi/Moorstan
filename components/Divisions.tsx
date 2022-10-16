@@ -170,6 +170,8 @@ export default function Divisions() {
         {data.map((d, i) => {
           return (
             <Section
+              thumbnail={d.thumbnail}
+              cover={d.cover}
               key={"divi" + i}
               title={d.title}
               header={d.header}
@@ -186,10 +188,14 @@ function Section({
   data,
   title,
   header,
+  thumbnail,
+  cover,
 }: {
   data: any;
   title: string;
   header: string;
+  thumbnail: string;
+  cover: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -223,11 +229,7 @@ function Section({
           >
             X
           </button>
-          <img
-            src="sections/1.jpg"
-            alt=""
-            className="w-full h-80 object-cover mt-4"
-          />
+          <img src={cover} alt="" className="w-full h-80 object-cover mt-4" />
           <p className="font-main text-xl  p-4 mt-1 text-right text-pumpa">
             {header}
           </p>
@@ -246,7 +248,7 @@ function Section({
           whileInView={{ opacity: 1 }}
           // whileHover={{ blur: 1.2 }}
           className="w-full h-full object-cover opacity-0 absolute"
-          src="/sections/1.jpg"
+          src={thumbnail}
           alt="img"
         />
         <div className="w-full h-full bg-gradient-to-t from-[#050408da] to-[#fff0] z-10 text-white flex justify-center items-end pb-4 font-main ">
