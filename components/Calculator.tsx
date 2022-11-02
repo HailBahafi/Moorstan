@@ -19,8 +19,19 @@ export default function Calculator() {
         حاسبة التكلفة
       </div>
       <div className="flex flex-col w-full justify-start items-center border-black border-0">
-        {/* <Categories setCat={setCat} /> */}
         {cat == 0 && <Treatment setTreatment={setTreatment} />}
+        <div className="w-full text-center mt-4">
+          جميع الاسعار خالية من العمولات *
+        </div>
+        <div className="w-full text-center mt-2">
+          السعر النهائي قد يختلف باختلاف حالة المريض *
+        </div>
+        <div className="w-full text-center mt-2">
+          الرجاء التواصل معنا وارسال تقاريركم الطبية كي نتمكن من تحديد السعر
+          النهائي
+          <br />
+          ورسم خطة علاج كاملة
+        </div>
       </div>
     </div>
   );
@@ -156,11 +167,11 @@ function Bill({ index }: { index: number }) {
                   <div className="flex flex-row flex-wrap gap-6 justify-center mt-2">
                     <Info
                       label=" في المستشفى"
-                      info={data[index].duurationInIndia + " ايام"}
+                      info={data[index].durationInHospital + " ايام"}
                     ></Info>
                     <Info
                       label="في الهند"
-                      info={data[index].durationInHospital + " ايام"}
+                      info={data[index].duurationInIndia + " ايام"}
                     ></Info>
                   </div>
                 </div>
