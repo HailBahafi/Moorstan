@@ -29,10 +29,10 @@ export const data = [
     ),
   },
   {
-    title: "القلب ",
+    title: "القلب",
     header: "علاج امراض القلب  في الهند",
-    thumbnail: "sections/Heart.jpg",
-    cover: "sections/Heart.jpg",
+    thumbnail: "sections/HeartCon.jpg",
+    cover: "sections/HeartCon.jpg",
     data: (
       <p dir="rtl" lang="ar">
         معالجونا واطبائنا مهتمون بدعم كفائة القلب والاوعية الدموية مع توفير

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { useScroll } from "framer-motion";
+//import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 //@ts-ignore
