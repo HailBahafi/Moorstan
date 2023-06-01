@@ -179,9 +179,9 @@ function Bill({ index }: { index: number }) {
                 <div className="flex flex-col justify-center items-center ">
                   <p className="text-lg">التكاليف اليومية</p>
                   <div className="flex flex-row flex-wrap gap-4 justify-center mt-2">
-                    <Price label="الاكل والشرب" price1={4}></Price>
+                    <Price label="الاكل والشرب" price1={5} price2={15}></Price>
                     <Price label="السكن" price1={15} price2={20}></Price>
-                    <Price label="المواصلات" price1={5}></Price>
+                    <Price label="المواصلات" price1={5} price2={15}></Price>
                   </div>
                 </div>
               </div>

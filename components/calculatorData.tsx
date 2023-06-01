@@ -2,7 +2,7 @@ export const data = [
   {
     label: "زراعة كبد",
     min: 27000,
-    max: 29000,
+    max: 30000,
     duurationInIndia: 90,
     durationInHospital: 17,
     turkey: 60000,
@@ -11,7 +11,7 @@ export const data = [
   },
   {
     label: "زراعة الكلى",
-    min: 9000,
+    min: 8000,
     max: 11000,
     duurationInIndia: 90,
     durationInHospital: 10,
@@ -32,7 +32,7 @@ export const data = [
   {
     label: "زراعة نخاع العظم",
     min: 24000,
-    max: 25000,
+    max: 27000,
     duurationInIndia: 120,
     durationInHospital: 24,
     turkey: 50000,
@@ -51,8 +51,8 @@ export const data = [
   },
   {
     label: "عملية تخفيف التحام فقرات العمود ",
-    min: 3500,
-    max: 4500,
+    min: 4000,
+    max: 5000,
     duurationInIndia: 25,
     durationInHospital: 4,
     turkey: 15000,
@@ -61,8 +61,8 @@ export const data = [
   },
   {
     label: "إزالة الغضروف القطني (الديسك)",
-    min: 3500,
-    max: 4000,
+    min: 4000,
+    max: 4500,
     duurationInIndia: 15,
     durationInHospital: 2,
     turkey: 10000,
@@ -143,7 +143,7 @@ export const data = [
     usa: 25000,
   },
   {
-    label: "إستئصال المراره",
+    label: "إستئصال المرارة",
     min: 2500,
     max: 3000,
     duurationInIndia: 30,
@@ -154,8 +154,8 @@ export const data = [
   },
   {
     label: "تبديل مفصل الركبة",
-    min: 3500,
-    max: 4000,
+    min: 4000,
+    max: 4500,
     duurationInIndia: 25,
     durationInHospital: 3,
     turkey: 10000,
@@ -184,7 +184,7 @@ export const data = [
   },
   {
     label: "تبديل مفصل الورك",
-    min: 3500,
+    min: 4000,
     max: 6000,
     duurationInIndia: 30,
     durationInHospital: 4,
@@ -203,7 +203,7 @@ export const data = [
     usa: 40000,
   },
   {
-    label: " قسطرة القلب (دعامات )",
+    label: " قسطرة القلب (دعامات)",
     min: 3000,
     max: 3500,
     duurationInIndia: 7,
