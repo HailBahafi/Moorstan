@@ -76,9 +76,9 @@ export default function Contact() {
         سنقوم بالتواصل معك
       </div>
       <div className="flex justify-center items-center gap-3 p-4">
-        <Info icon="icons/email.png" data="email@email.com"></Info>
-        <Info icon="icons/whatsapp.png" data="+91774639193"></Info>
-        <Info icon="icons/instagram.png" data="@indiahealth"></Info>
+        <Info icon="icons/email.png" data="info@moorstan.com"></Info>
+        <Info icon="icons/whatsapp.png" data="+967 775742472"></Info>
+        <Info icon="icons/instagram.png" data="@moorstan.medical"></Info>
       </div>
       <form
         className="bg-white w-full h-full rounded-xl md:p-6 p-4 font-main flex flex-col mb-12 "
